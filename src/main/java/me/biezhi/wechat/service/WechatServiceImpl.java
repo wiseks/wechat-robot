@@ -371,7 +371,7 @@ public class WechatServiceImpl implements WechatService {
 			String content = msg.getString("Content");
 			
 			if (msgType == 51) {
-				LOGGER.info("成功截获微信初始化消息");
+				LOGGER.info("自己发出的微信消息拦截：成功截获微信初始化消息");
 			} else if (msgType == 1) {
 				if (Constant.FILTER_USERS.contains(msg.getString("ToUserName"))) {
 					continue;
