@@ -1,6 +1,8 @@
 package me.biezhi.wechat.service;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import me.biezhi.wechat.util.PingUtil;
@@ -383,6 +385,11 @@ public class WechatServiceImpl implements WechatService {
 				} else {
 					LOGGER.info(name + ": " + content);
 					String ans = robot.talk(content);
+					Calendar c = Calendar.getInstance();
+					int hour = c.get(Calendar.HOUR_OF_DAY);
+					if(hour>=23){
+						//webwxsendmsg(wechatMeta, ans, msg.getString("FromUserName"));
+					}
 					//webwxsendmsg(wechatMeta, ans, msg.getString("FromUserName"));
 					LOGGER.info("自动回复 " + ans);
 				}
