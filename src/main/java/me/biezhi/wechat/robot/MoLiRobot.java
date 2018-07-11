@@ -20,7 +20,7 @@ public class MoLiRobot implements Robot {
 	@Override
 	public String talk(String msg) {
 		if(null == this.apiUrl){
-			return "机器人未配置";
+			return "机器人自动回复：机器人未配置";
 		}
 		String url = apiUrl + "&question=" + msg;
 		String result = HttpRequest.get(url).connectTimeout(3000).body();

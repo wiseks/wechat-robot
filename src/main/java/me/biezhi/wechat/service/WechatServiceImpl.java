@@ -383,7 +383,7 @@ public class WechatServiceImpl implements WechatService {
 				} else {
 					LOGGER.info(name + ": " + content);
 					String ans = robot.talk(content);
-					webwxsendmsg(wechatMeta, ans, msg.getString("FromUserName"));
+					//webwxsendmsg(wechatMeta, ans, msg.getString("FromUserName"));
 					LOGGER.info("自动回复 " + ans);
 				}
 			} else if (msgType == 3) {
